@@ -6,92 +6,90 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>mjlehrke.com</title>
   <link href="https://fonts.googleapis.com/css?family=Handlee" rel="stylesheet">
-  <script type="text/javascript">
+  <!-- <script type="text/javascript">
     var elm = document.getElementsByTagName("html")[0];
     elm.style.display="none";
     document.addEventListener("DOMContentLoaded", function(event) { elm.style.display="block"; });
-  </script>
+  </script> -->
   <style>
     * {
       margin: 0;
       padding: 0;
     }
 
+    ::selection {
+      color: #f4f4f4;
+      background: #440e9b;
+    }
+
     html {
+      background: yellow;
       font-family: 'Handlee', cursive;
-      height: 100%;
+      height: 100vh;
     }
 
     body {
-      background-image: linear-gradient( 60deg, #ff9d6c 10%, #bb4e75 100% );
+      background: green;
+      background: linear-gradient( 60deg, #ff9d6c 10%, #bb4e75 100% );
+      align-items: center;
       color: #f4f4f4;
-      height: 100%;
-      min-width: 380px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 2.5rem 1.5rem 0  1.5rem;
       text-shadow: 2px 2px 3px #bb4e75;
     }
 
-    .wrapper {
-      align-items: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      margin: 0 auto;
-      height: 100%;
-      width: 85%;
-    }
-
     h1 {
-      font-size: 6rem;
+      font-size: 2.5rem;
     }
 
     .title {
-      align-self: flex-end;
-      font-size: 3.3rem;
-      margin-top: 5rem;
+      font-size: 1.8rem;
+      margin-top: 1.8rem;
     }
 
-    .highlight {
-      color:#67426e;
-      text-shadow: 1px 1px 3px #412945;
-    }
+    @media only screen and (min-width: 600px) {
+      body {
+        justify-content: center;
+        padding: 0 4rem;
+      }
 
-    @media only screen and (max-width: 1000px) {
-      h1 {
-        font-size: 5rem;
+      .title {
+        font-size: 2rem;
       }
     }
 
-    @media only screen and (max-width: 800px) {
+    @media only screen and (min-width: 900px) {
+      body {
+        padding: 0 8rem;
+      }
+
       h1 {
         font-size: 4rem;
       }
 
       .title {
-        font-size: 3rem;
+        font-size: 2.5rem;
+        margin-top: 2.5rem;
       }
     }
 
-    @media only screen and (max-width: 600px) {
-      .wrapper {
-        width: 90%;
-      }
-
+    @media only screen and (min-width: 1200px) {
       h1 {
-        font-size: 2.5rem;
-        text-align: center;
+        font-size: 6rem;
       }
 
       .title {
-        align-self: center;
-        font-size: 2rem;
+        font-size: 4rem;
+        margin-top: 4rem;
       }
     }
   </style>
 </head>
 <body>
-  <div class="wrapper">
-    <h1>Equipped with his five senses, man explores the universe around him and calls the adventure <span class="highlight">Science</span></h1>
-    <p class="title"><em>-- Edwin Powell Hubble</em></p>
-  </div>
+  <h1>Equipped with his five senses, man explores the universe around him and calls the adventure science</h1>
+  <p class="title"><em>-- Edwin Powell Hubble</em></p>
 </body>
 </html>
