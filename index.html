@@ -1,95 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>mjlehrke.com</title>
-  <link href="https://fonts.googleapis.com/css?family=Handlee" rel="stylesheet">
-  <script type="text/javascript">
-    var elm = document.getElementsByTagName("html")[0];
-    elm.style.display="none";
-    document.addEventListener("DOMContentLoaded", function(event) { elm.style.display="block"; });
-  </script>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
-
-    ::selection {
-      color: #f4f4f4;
-      background: #440e9b;
-    }
-
-    html {
-      background: yellow;
-      font-family: 'Handlee', cursive;
-      height: 100vh;
-    }
-
-    body {
-      background: green;
-      background: linear-gradient( 60deg, #ff9d6c 10%, #bb4e75 100% );
-      align-items: center;
-      color: #f4f4f4;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      min-height: 100vh;
-      padding: 2.5rem 1.5rem 0  1.5rem;
-      text-shadow: 2px 2px 3px #bb4e75;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-    }
-
-    .title {
-      font-size: 1.8rem;
-      margin-top: 1.8rem;
-    }
-
-    @media only screen and (min-width: 600px) {
-      body {
-        justify-content: center;
-        padding: 0 4rem;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Michael J. Lehrke | mjlehrke.com</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Shadows+Into+Light&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
 
-      .title {
-        font-size: 2rem;
+      ::selection {
+        background: rgb(173, 136, 219);
+        color: #232323;
       }
-    }
 
-    @media only screen and (min-width: 900px) {
+      html {
+        background: #232323;
+        color: #cecece;
+        font-family: "Inter", sans-serif;
+        height: 100vh;
+        overflow: scroll;
+      }
+
+      a {
+        color: #cecece;
+        transition: color ease-in-out 200ms;
+      }
+
+      a:hover,
+      a:focus {
+        color: rgb(173, 136, 219);
+      }
+
       body {
-        padding: 0 8rem;
+        display: grid;
+        grid-template: "header" auto "content" 1fr "footer" auto / 1fr;
+        width: min(80%, 1100px);
+        height: 100vh;
+        margin: 0 auto;
+        font-size: clamp(20px, 2vw, 1.5rem);
+        min-width: 350px;
+        padding: 20px;
+      }
+
+      .header {
+        display: grid;
+        grid-template: "title icons" auto / 1fr;
+        width: 100%;
+        align-items: baseline;
       }
 
       h1 {
-        font-size: 4rem;
+        font-family: "Shadows Into Light", cursive;
+        font-size: clamp(2.5rem, 4vw, 50px);
+        letter-spacing: 2px;
+        line-height: 1.2;
       }
 
-      .title {
-        font-size: 2.5rem;
-        margin-top: 2.5rem;
-      }
-    }
-
-    @media only screen and (min-width: 1200px) {
-      h1 {
-        font-size: 6rem;
+      .icon {
+        width: 40px;
+        height: 40px;
+        fill: #cecece;
+        transition: fill ease-in-out 200ms;
       }
 
-      .title {
-        font-size: 4rem;
-        margin-top: 4rem;
+      .icon:hover,
+      .icon:focus {
+        fill: rgb(173, 136, 219);
       }
-    }
-  </style>
-</head>
-<body>
-  <h1>Hello there</h1>
-  <p class="title"><em></em></p>
-</body>
+
+      .icon-link:not(:first-child) {
+        margin-left: 10px;
+      }
+
+      .content {
+        margin: 60px 0;
+      }
+
+      .picture {
+        text-align: center;
+        width: 100%;
+        margin-bottom: 40px;
+      }
+
+      .picture img {
+        width: clamp(150px, 20vw, 200px);
+        height: clamp(150px, 20vw, 200px);
+        border-radius: 50%;
+        border: solid 7px rgb(173, 136, 219);
+      }
+
+      .greeting {
+        font-size: clamp(2rem, 3vw, 40px);
+        margin-bottom: 50px;
+        font-weight: 100;
+      }
+
+      h2 {
+        font-size: clamp(2.3rem, 3vw, 50px);
+        line-height: 1.25;
+        font-weight: 900;
+      }
+
+      .name {
+        font-family: "Shadows Into Light", cursive;
+        font-size: clamp(2.4rem, 3vw, 60px);
+        font-weight: 900;
+        margin: 0 1.3rem;
+        color: rgb(173, 136, 219);
+        letter-spacing: 4px;
+      }
+
+      .intro {
+        margin-top: 30px;
+        line-height: 1.7;
+      }
+
+      .projects {
+        margin-top: 80px;
+      }
+
+      h3 {
+        color: rgb(173, 136, 219);
+        font-size: clamp(2rem, 3vw, 45px);
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .card {
+        max-width: 500px;
+        padding: 20px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .card a {
+        text-decoration: none;
+      }
+
+      .card img {
+        object-fit: cover;
+        border: solid 7px rgb(173, 136, 219);
+        border-radius: 25px;
+      }
+
+      h4 {
+        font-size: clamp(2rem, 3vw, 30px);
+        margin-bottom: 15px;
+      }
+
+      .open-source {
+        margin-top: 50px;
+      }
+
+      .footer {
+        margin-top: 100px;
+        text-align: center;
+      }
+
+      .footer p {
+        color: #a1a1a1;
+        padding: 1.5rem 0;
+      }
+
+      @media (max-width: 600px) {
+        .header {
+          grid-template: "title" auto "icons" auto / 1fr;
+          row-gap: 20px;
+          justify-items: center;
+        }
+
+        .icon {
+          width: 30px;
+          height: 30px;
+          fill: #cecece;
+          transition: fill ease-in-out 200ms;
+        }
+
+        .picture {
+          margin-bottom: 60px;
+        }
+
+        .content {
+          margin: 60px 0;
+        }
+
+        .greeting {
+          margin-bottom: 30px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="header">
+      <h1>Michael J. Lehrke</h1>
+      <div class="icons">
+        <a class="icon-link" href="https://github.com/mjlehrke">
+          <svg
+            class="icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="512"
+            height="512"
+            viewBox="0 0 512 512"
+          >
+            <title>Github profile</title>
+            <path
+              d="M256 32C132.3 32 32 134.9 32 261.7c0 101.5 64.2 187.5 153.2 217.9a17.56 17.56 0 0 0 3.8.4c8.3 0 11.5-6.1 11.5-11.4 0-5.5-.2-19.9-.3-39.1a102.4 102.4 0 0 1-22.6 2.7c-43.1 0-52.9-33.5-52.9-33.5-10.2-26.5-24.9-33.6-24.9-33.6-19.5-13.7-.1-14.1 1.4-14.1h.1c22.5 2 34.3 23.8 34.3 23.8 11.2 19.6 26.2 25.1 39.6 25.1a63 63 0 0 0 25.6-6c2-14.8 7.8-24.9 14.2-30.7-49.7-5.8-102-25.5-102-113.5 0-25.1 8.7-45.6 23-61.6-2.3-5.8-10-29.2 2.2-60.8a18.64 18.64 0 0 1 5-.5c8.1 0 26.4 3.1 56.6 24.1a208.21 208.21 0 0 1 112.2 0c30.2-21 48.5-24.1 56.6-24.1a18.64 18.64 0 0 1 5 .5c12.2 31.6 4.5 55 2.2 60.8 14.3 16.1 23 36.6 23 61.6 0 88.2-52.4 107.6-102.3 113.3 8 7.1 15.2 21.1 15.2 42.5 0 30.7-.3 55.5-.3 63 0 5.4 3.1 11.5 11.4 11.5a19.35 19.35 0 0 0 4-.4C415.9 449.2 480 363.1 480 261.7 480 134.9 379.7 32 256 32z"
+            ></path></svg
+        ></a>
+        <a class="icon-link" href="https://www.linkedin.com/in/mjlehrke/"
+          ><svg
+            class="icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="512"
+            height="512"
+            viewBox="0 0 512 512"
+          >
+            <title>LinkedIn profile</title>
+
+            <path
+              d="M444.17 32H70.28C49.85 32 32 46.7 32 66.89v374.72C32 461.91 49.85 480 70.28 480h373.78c20.54 0 35.94-18.21 35.94-38.39V66.89C480.12 46.7 464.6 32 444.17 32zm-273.3 373.43h-64.18V205.88h64.18zM141 175.54h-.46c-20.54 0-33.84-15.29-33.84-34.43 0-19.49 13.65-34.42 34.65-34.42s33.85 14.82 34.31 34.42c-.01 19.14-13.31 34.43-34.66 34.43zm264.43 229.89h-64.18V296.32c0-26.14-9.34-44-32.56-44-17.74 0-28.24 12-32.91 23.69-1.75 4.2-2.22 9.92-2.22 15.76v113.66h-64.18V205.88h64.18v27.77c9.34-13.3 23.93-32.44 57.88-32.44 42.13 0 74 27.77 74 87.64z"
+            ></path></svg
+        ></a>
+      </div>
+    </header>
+    <div class="content">
+      <div class="picture"><img src="profile.png" alt="Profile pic" /></div>
+      <p class="greeting">Hello there,</p>
+      <h2>
+        I'm <span class="name">Michael</span>- an Immunologist (with a web
+        development hobby).
+      </h2>
+      <p class="intro">
+        Immunology and web development are an intriguing mix, I admit. But it
+        was my curiosity that drove me into both fields. I have over eight years
+        of experience studying hematopoiesis and the development, function, and
+        homeostasis of lymphocytes (❤️ B cells). As a hobby, I taught myself
+        full-stack web development so I can help make science more accessible,
+        collaborative, and rigorous.
+      </p>
+      <p class="intro">
+        I am currently work in biotech, pursuing novel treatments for autoimmune
+        diseases.
+      </p>
+
+      <!-- <div class="projects">
+      <h3>Projects</h3>
+      <div class="card">
+        <a href="https://cellmarkers.com">
+          <h4>CellMarkers.com</h4>
+          <img src="cellmarkers.png" alt="CellMarkers.com screenshot" width="400" height="400" />
+        </a>
+      </div>
+    </div>
+
+    <div class="open-source">
+      <h3>Open-Source</h3>
+      <div class="card">
+        <a href="https://www.npmjs.com/package/formkit-validation-helper">
+          <h4>formkit-validation-helper</h4>
+          <img src="fvh.png" alt="CellMarkers.com screenshot" width="400" height="400" />
+        </a>
+      </div>
+    </div>-->
+    </div>
+    <footer class="footer">
+      <p>&copy; Michael J. Lehrke</p>
+    </footer>
+  </body>
 </html>
